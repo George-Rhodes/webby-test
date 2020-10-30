@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>  
+    <head>    
+       <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/css/main.css">
+        <title>Local Attractions</title> 
+    </head>  
+<body>
+    <div id="logoDiv">
+            <img id="logo" src="../static/img/logo.jpeg" alt="logo">
+          </div>
+    <div id="wrapper">
+      
+        <div id="header">
+          
+          <div id="nav">
+              <button id="hiderBtn" type="button">≡</button>
+                
+            <ul id="smallNav">
+                <li><a href="homepage">Homepage</a></li>  
+                <li><a href="local_attractions">Local Attractions</a></li>  
+                <li><a href="reviews">Reviews</a></li>  
+                <li><a href="booking">Booking</a></li>    
+            </ul>
+                  
+              <ul id="bigNav">
+                <li><a href="homepage">Homepage</a></li>  
+                <li><a href="local_attractions">Local Attractions</a></li>  
+                <li><a href="reviews">Reviews</a></li>  
+                <li><a href="booking">Booking</a></li>    
+            </ul>
+          </div> 
+        </div>
+    
+        <div id="content-wrap">
+            <h1> Reviews: </h1>
+        <table> <!-- inline styling -->
+            {% for line in aList %}
+                <tr>
+                    {% for item in line%}
+                        <td>
+                            {{item}}
+                        </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                
+        </table>
+        
+        
+    <h1>Enter a review:</h1>
+<form action ="addReview" method = "post" > <br>
+
+Name <input type = "text" name="name" > <br>
+Review <input type = "text" name="review" id="reviewBox" > <br>
+<input type = "submit" value="Add to file" />
+            </form>
+            </div>
+            
+        </div> <!--Close content wrap-->
+        <footer>
+    <p> &copy;Footer </p>
+    
+    </footer>
+    
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" charset="utf-8"></script>
+<script src="../static/js/main.js"></script>
+</body>
+    
+</html>

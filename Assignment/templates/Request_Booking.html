@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>  
+    <head>    
+       <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/css/main.css">
+        <title>Local Attractions</title> 
+    </head>  
+<body>
+    <div id="logoDiv">
+            <img id="logo" src="../static/img/logo.jpeg" alt="logo">
+          </div>
+    <div id="wrapper">
+      
+        <div id="header">
+          
+          <div id="nav">
+              <button id="hiderBtn" type="button">≡</button>
+                
+            <ul id="smallNav">
+                <li><a href="homepage">Homepage</a></li>  
+                <li><a href="local_attractions">Local Attractions</a></li>  
+                <li><a href="reviews">Reviews</a></li>  
+                <li><a href="booking">Booking</a></li>    
+            </ul>
+                  
+              <ul id="bigNav">
+                <li><a href="homepage">Homepage</a></li>  
+                <li><a href="local_attractions">Local Attractions</a></li>  
+                <li><a href="reviews">Reviews</a></li>  
+                <li><a href="booking">Booking</a></li>    
+            </ul>
+          </div> 
+        </div>
+    
+        <div id="content-wrap">
+
+			<div id="left-div" class="content">
+                <h1>Request a Booking</h1>
+                <form action = "book" method = "post" >
+                <input type="radio" name="room" value="r1" checked="checked">Room 1
+                <input type="radio" name="room" value="r2" >Room 2
+                <input type="radio" name="room" value="r3" >Room 3 <br>
+                <input type="radio" name="room" value="r4" >Room 4
+                <input type="radio" name="room" value="r5" >Room 5
+                <input type="radio" name="room" value="r6" >Room 6 <br>
+                <h3>Name</h3><input type="text" name="name" value="Bob" > <br>
+                <h3>Email address</h3><input type="email" name="email"> <br>
+
+                <p> Enter dates in the form dd-mm-yyyy</p>
+                <h3>Check in Date</h3><input type="date" name="checkIn"> <br>
+                <h3>Check out Date</h3><input type="date" name="checkOut"> <br>
+
+                <input type = "submit" value = "Submit" >
+                
+                </form>
+            </div>
+            <div  id="right-div" class="content">
+
+                <h1> Bookings: </h1>
+				{% if error %}
+				{{ error }}
+				{% endif %}
+                <table> <!-- inline styling -->
+                    {% for line in aList %}
+                        <tr>
+                            {% for item in line[2:5]%}
+                                <td>
+                                    {{item}}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                        
+                </table>
+
+				<script>
+				var myList = [
+				{% for line in aList %}
+                    {{ line|safe }},
+                {% endfor %}
+				];
+                </script>
+            </div>
+            <div>
+			
+			<h1> Map </h1>
+			
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38737.57213685644!2d1.2518302868314113!3d52.64013778822444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d0aad55133f513%3A0x684ca5e00e12452f!2sNorwich!5e0!3m2!1sen!2suk!4v1511879297278"></iframe>
+			
+			
+			</div>
+        </div> <!--Close content wrap-->
+</div> <!--Close the wrapper-->
+        <footer>
+            <p> Billton&copy; - Find us on Social Media </p> 
+            <p><a class="footerbtn" href="www.facebook.com"> Facebook </a> <a class="footerbtn" href="www.twitter.com"> Twitter </a> </p>
+    
+    </footer>
+    
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js" charset="utf-8"></script>
+<script src="../static/js/main.js"></script>
+</body>
+    
+</html>

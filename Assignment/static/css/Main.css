@@ -1,0 +1,289 @@
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Geneva, sans-serif;
+    position: relative;
+    
+}
+
+td{
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+}
+
+#content-wrap{
+    padding: 0 5px 0 5px;
+    margin-top: -20px;
+    
+}
+
+#nav{
+    width: 100%;
+    border-bottom: thin solid black;
+    background-color: grey;
+    border: 1px solid black; 
+}
+
+#header {
+    width: 100%;
+}
+
+
+#logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    
+}
+
+.attractionImgs{
+    width: 100%;
+    
+}
+  
+footer{
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    background-color: grey;
+    
+}
+
+iframe {
+    /*ask about this on tuesday*/
+    
+}
+
+.footerbtn{
+    
+    text-decoration: none;
+    
+}
+
+#reviewForm{
+    
+    padding-left: 20px;
+    vertical-align: middle;
+    
+}
+
+#nameBox{
+    margin-bottom: 6px;
+    margin-left: 9px;
+}
+
+#reviewBox{
+    width: 80%;
+    height: 100px;
+    
+}
+
+    /*Gallery CSS*/
+
+    #gallery{
+    position: relative;
+	font-size: 0;
+	width: 100%;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    
+    
+	
+}
+    
+    #gallery img {
+	width: 30%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+	
+    
+    
+    
+
+}
+    
+    #gallery a {
+
+	border: 4px solid transparent;
+    transition: border-radius 0.8s ease-in 0.3s;
+	opacity: .75;
+    
+
+}
+
+
+
+    #gallery a:hover {
+	
+	opacity: 1;
+
+    
+
+}
+    /*End Gallery CSS*/
+    
+    /*Overlay CSS*/
+    
+#overlay {
+  background: rgba(0,0,0,0.7); /*last value indicates opacity*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+  text-align:center;
+}
+    
+#htlImgs{
+        position: relative; /*use this div to position the newly appended overlay with the position property*/
+        clear: both;
+        width: 100%;
+    
+}
+        
+#overlay img {
+width: 85%;
+margin-top: 10%;
+}
+    
+#overlay p {
+color: white;
+}
+
+#closeGallery{
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    size: 20px;
+    padding: 8px 8px 8px 8px;
+
+}
+    
+    /*End Overlay CSS*/
+
+
+@media (max-width: 767px){ /*Smaller screens*/
+    
+    
+    #nav{
+        margin-bottom: 2px;
+        
+    }
+    
+    #bigNav {
+        display: none;
+        
+    }
+  
+    #smallNav li a {
+        text-decoration: none;
+        color: black;
+        transition: color 0.2s ease-in 0.1s;
+        list-style-type: none;
+    }
+    
+    #smallNav{
+        list-style: none;
+        text-align: center;
+    }
+    
+     #smallNav li a:hover {
+         color: white;
+    }
+    
+    #hiderBtn{
+        margin-top: 4px;
+        margin-bottom: 4px;
+        margin-left:10%;
+        width: 60px;
+        font-size: 40px;
+        border: 1px solid black;
+        border-radius: 20px; 
+        
+        
+    }
+
+    
+}  /*Close media query*/
+
+@media (min-width: 768px){ /*Bigger screens*/
+
+#content-wrap{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    width: 80%;
+    margin: auto;
+    }
+    
+
+#left-div {
+    display: inline-block;
+    width: 49%;
+}
+
+    #smallNav, #hiderBtn{
+        display:none !important; /*Override any above conflicting styles and apply this one*/
+    }
+    
+    #bigNav{
+        
+        width: 100%;
+        padding-bottom: 10px;
+        text-align: center
+    }
+    
+    #bigNav li {
+        display: inline;
+        padding-left: 1.0%;
+        padding-right: 1.0%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+     #bigNav li a {
+        text-decoration: none;
+        color: black;
+        transition: color 0.2s ease-in 0.1s;
+    }
+    
+    #bigNav li a:hover {
+         color: white;
+    }
+
+    .container{
+    width: 80%;
+    max-width: 1150px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    .content{
+  display: inline-block;
+  width: 45%;
+  margin-right: -4px; /*the div are displayed as inline block , browsers creates extra space which breaks the column layout, negative margin needed to fix this, pull columns towards eachother and make them appear on same line.*/
+  vertical-align: top; /*allow columns to be vertically aligned to the top of their container*/
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+
+}
+
+.attractionImgs{
+    width: 70%;
+    margin-right: 3px;
+    float: left;
+    border:1px solid black;
+}
+
+.imgDiv{
+
+}
+
+
+} /*Close media query*/
+
